@@ -1,5 +1,5 @@
 const DataSource = require('../src/index');
-const db = new DataSource('mongodb+srv://developer:6gds943jfl0cASCsa@cluster0-vbuib.mongodb.net');
+const db = new DataSource('URL_CONNECTION');
 
 async function runTest() {
 
@@ -9,10 +9,7 @@ async function runTest() {
         include: [{
             model: 'Payment',
             foreignKey: 'payment',
-            field: '_payment',
-            scope: {
-                fields: ['lastDigits', 'firstDigits']
-            }
+            field: '_payment'
         }],
         limit: 10
     });
