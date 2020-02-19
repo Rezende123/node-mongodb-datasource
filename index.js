@@ -2,16 +2,17 @@
 
 module.exports = class Datasource {
 
-    constructor() {
+    constructor(url) {
         this.MongoClient = require('mongodb').MongoClient;
         this.database = null;
         this.connectToDatabase();
+
+        this.connectionUrl = url;
     }
 
     set connectionUrl(url) {
         this.urlConnection = url;
     }
-
     get connectionUrl() {
         return this.urlConnection;
     } 
