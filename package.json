@@ -1,8 +1,8 @@
 {
   "name": "mongodb-datasource",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Conexão node com o banco de dados mongodb via npm ",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +12,12 @@
   },
   "author": "Felipe Rezende",
   "license": "ISC",
+  "keywords": [
+    "mongodb",
+    "find",
+    "aggregation",
+    "datasource"
+  ],
   "bugs": {
     "url": "https://github.com/Rezende123/node-mongodb-datasource/issues"
   },
