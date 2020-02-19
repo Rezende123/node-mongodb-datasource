@@ -5,13 +5,16 @@ async function runTest() {
 
     await db.connectToDatabase();
     
-    const data = await db.find('Finantial', 'Refund', {  }, {
+    const data = await db.find('Finantial', 'Refund', {}, {
         include: [{
-            relation: '_payment',
+            model: 'Payment',
+            foreignKey: 'payment',
+            field: '_payment',
             scope: {
                 fields: ['lastDigits', 'firstDigits']
             }
-        }]
+        }],
+        limit: 10
     });
 
     console.log(data);
