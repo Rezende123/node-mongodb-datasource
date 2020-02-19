@@ -1,4 +1,4 @@
-const DataSource = require('../index');
+const DataSource = require('../src/index');
 const db = new DataSource('mongodb+srv://developer:6gds943jfl0cASCsa@cluster0-vbuib.mongodb.net');
 
 async function runTest() {
