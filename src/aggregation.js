@@ -16,6 +16,9 @@ module.exports = function makeAggregation(where, options) {
     if (options.sort) {
         aggregation = aggregation.concat( optionAggregate('sort', options.sort) );
     }
+    if (options.fields) {
+        aggregation = aggregation.concat( fieldsAggregate(options.fields) );
+    }
     
     return aggregation;
 }
@@ -24,6 +27,16 @@ function optionAggregate(label, content) {
     return [{
         [`$${label}`]: content
     }];
+}
+
+function fieldsAggregate(fields) {
+    let $project = {};
+
+    fields.forEach(field => {
+        $project = Object.assign($project, {[field]: 1});
+    });
+
+    return [{$project}];
 }
 
 function includeAggregate(include) {

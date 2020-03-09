@@ -4,7 +4,7 @@
   "description": "Conexão node com o banco de dados mongodb via npm ",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/Rezende123/node-mongodb-datasource#readme",
   "dependencies": {
-    "mongodb": "^3.5.3"
+    "mongodb": "^3.5.4"
   }
 }
