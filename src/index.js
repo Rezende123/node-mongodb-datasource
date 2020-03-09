@@ -50,6 +50,7 @@ module.exports = class Datasource {
     updateById(dbName, collectionName, data, $unset = {}) {
         const _id = data._id;
         delete data._id;
+        delete data.id;
         
         return this.getCollection(dbName, collectionName).updateOne({_id}, {
             $set: data,
