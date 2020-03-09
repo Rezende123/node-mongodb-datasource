@@ -1,6 +1,6 @@
 {
   "name": "mongodb-datasource",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Conexão node com o banco de dados mongodb via npm ",
   "main": "src/index.js",
   "scripts": {
