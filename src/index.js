@@ -46,4 +46,18 @@ module.exports = class Datasource {
     find(dbName, collectionName, where = {}, options = {}) {
         return this.queryDatabase(dbName, collectionName, where, options);
     }
+
+    updateById(dbName, collectionName, data, $unset = {}) {
+        const _id = data._id;
+        delete data._id;
+        
+        return this.getCollection(dbName, collectionName).updateOne({_id}, {
+            $set: data,
+            $unset
+        });
+    }
+
+    deleteById(dbName, collectionName, _id) {
+        return this.getCollection(dbName, collectionName).deleteOne({_id});
+    }
 }
